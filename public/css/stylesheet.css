@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap);
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    background: url('/wallpaper.jpg')no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.card{
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    align-items: center; 
+}
+.form-group{
+    position: relative;
+    width: 300px;
+}
+.form-group label{
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+.form-control,
+.input-group-text,
+.custom-select,
+.custom-file-label {
+    color: #fff;
+    background: transparent;
+    border-color: #e4e6fc;
+}
+.form-control:focus,
+.input-group-text:focus,
+.custom-select:focus,
+.custom-file-label:focus {
+    color: #fff;
+    background: transparent;
+    border-color: #65451F;
+}
+
+.input-group-text,
+select.form-control:not([size]):not([multiple]),
+.form-control:not(.form-control-sm):not(.form-control-lg) {
+    font-size: 1em;
+    padding: 10px 38px 10px 15px;
+    height: 45px;
+    outline: none;
+}
+.form-group ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 2em;
+    top: 50px;
+    transform: translateY(-50%);
+}
+/* 
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+*/ 
+.btn{
+    background: #fff;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+} 
+
+.btn-light, .btn-light.disabled {
+    box-shadow: 0 2px 12px 3px #fff;
+}
+
+.register{
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+
+.login{
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.login p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.login p a:hover{
+    text-decoration: underline;
+}

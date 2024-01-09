@@ -7,12 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function dashboard(){
-        return view('pages.dashboard');
-    }
-
     public function index(){
-        // $data = Inputdata::orderBy('created_at', 'DESC')->get();
         $data = DB::table('products')
             ->join('users', 'users.id', '=', 'products.id_user')
             ->select('products.title','products.SKU','products.price','products.desc','products.image_uri')
@@ -20,7 +15,6 @@ class DashboardController extends Controller
             ->paginate(5);
 
         return view ('pages.dashboard',['data'=>$data]);
-        // return view ('pages.dashboard',compact('data'));
     }
 
     public function profile(){

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->bigInteger('id_user');
             $table->string('title');
             $table->string('SKU');
-            $table->string('price');
-            $table->string('desc');
+            $table->integer('price');
+            $table->text('desc');
             $table->string('image_uri');
             $table->timestamps();
         });

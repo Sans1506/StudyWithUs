@@ -31,7 +31,7 @@
 
 @if (isset($data))
 <div class="row">
-<div class="pb-5">
+{{-- <div class="pb-5">
 <form class="form-inline" method="GET" action="/urutkan">
     {{ csrf_field() }}
     <div class="row">
@@ -51,32 +51,37 @@
         </button>
     </div>
 </form>
-</div>
+</div> --}}
 <div class="col-12 col-md-12 col-lg-12">
-    <div class="card">
+    <div class="card table-responsive">
         <table class="table">
         <thead>
-            @php
-                $no=1
-            @endphp
             <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">SKU</th>
             <th scope="col">Price</th>
-            <th scope="col">desc</th>
             <th scope="col">Image_URI</th>
+            <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($data as $studywithus)                  
             <tr>
-            <th scope="row">{{$no++}}</th>
+            <td>{{$loop->iteration}}</td>
             <td>{{$studywithus->title}}</td>
             <td>{{$studywithus->SKU}}</td>
             <td>{{$studywithus->price}}</td>
-            <td>{{$studywithus->desc}}</td>
-            <td>{{$studywithus->image_uri}}</td>
+            <td><img src="{{ asset($studywithus->image_uri) }}" alt="{{ $studywithus->image_uri}}"></td>
+            <td>
+                <a href="{{route('products.show', $studywithus->id)}}" class="badge bg-info"><i class="fa fa-eye"></i></a>
+                <a href="{{route('products.edit', $studywithus->id)}}" class="badge bg-success"><i class="fa fa-pencil-alt"></i></a>
+                <form action="{{route('products.destroy', $studywithus->id)}}" method="POST" class="d-inline">
+                @method('DELETE')
+                @csrf
+                <button class="badge bg-danger border-0" onclick="return confirm('Anda yakin ingin menghapus??')"><i class="fa fa-eraser"></i></button>
+                </form>
+            </td>
             </tr>
             @endforeach
         </tbody>
@@ -90,31 +95,31 @@
 @elseif (!isset($data))
 <h5>data tidak ditemukan</h5> <a href="/dashboard">Kembali</a>
 @endif
-
+{{-- 
 <script>
-let alertPerjalanan = document.getElementById('alertCreatePerjalanan')
+    let alertPerjalanan = document.getElementById('alertCreatePerjalanan')
 
-let btnSortBy = document.getElementById('btnSortBy');
+    let btnSortBy = document.getElementById('btnSortBy');
 
-let sortByAsc = document.getElementById('sortByAsc');
-let sortByDesc = document.getElementById('sortyByDesc');
+    let sortByAsc = document.getElementById('sortByAsc');
+    let sortByDesc = document.getElementById('sortyByDesc');
 
-function sortByCheck(that) {
-    let value = that.value;
+    function sortByCheck(that) {
+        let value = that.value;
 
-    if(value === "suhu"){
-        sortByAsc.innerHTML = "Terkecil";
-        sortByDesc.innerHTML = "Terbesar";
-    } else if(value === "tanggal"){
-        sortByAsc.innerHTML = "Terlama";
-        sortByDesc.innerHTML = "Terbaru";
-    } else if(value === "jam"){
-        sortByAsc.innerHTML = "Terbaru";
-        sortByDesc.innerHTML = "Terlama";
-    } else if(value === "lokasi") {
-        sortByAsc.innerHTML = "A - Z";
-        sortByDesc.innerHTML = "Z - A";
+        if(value === "suhu"){
+            sortByAsc.innerHTML = "Terkecil";
+            sortByDesc.innerHTML = "Terbesar";
+        } else if(value === "tanggal"){
+            sortByAsc.innerHTML = "Terlama";
+            sortByDesc.innerHTML = "Terbaru";
+        } else if(value === "jam"){
+            sortByAsc.innerHTML = "Terbaru";
+            sortByDesc.innerHTML = "Terlama";
+        } else if(value === "lokasi") {
+            sortByAsc.innerHTML = "A - Z";
+            sortByDesc.innerHTML = "Z - A";
+        }
     }
-}
-</script>
+</script> --}}
 @endsection

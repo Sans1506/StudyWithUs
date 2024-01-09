@@ -64,7 +64,7 @@
 }
 
 a {
-  color: #65451F;
+  color: #fff;
   font-weight: 600;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -790,7 +790,14 @@ select.form-control:not([size]):not([multiple]) {
   margin-top: -1px;
 }
 .card .card-header h4 {
-  font-size: 2em;
+  font-size: 1.5em;
+  line-height: 28px;
+  color: #34395e;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+.card .card-header h3 {
+  font-size: 1.5em;
   line-height: 28px;
   color: #fff;
   padding-right: 10px;

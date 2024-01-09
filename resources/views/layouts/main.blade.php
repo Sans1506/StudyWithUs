@@ -26,7 +26,7 @@
         </div>
     </section>
     </div>
-    <footer class="main-footer">
+    <footer class="main-footer bg-dark">
     <div class="footer-left">
         <div class="bullet"></div> Design By <a href="https://github.com/Sans1506" target="_blank">Ikhsan Firmansyah</a>
     </div>

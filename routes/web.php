@@ -32,7 +32,7 @@ route::group(['middleware' => 'guest'], function(){
 
 route::group(['middleware' => 'auth'], function(){
     route::get('/profile', [DashboardController::class, 'profile']);
-    route::get('/product', [ProductController::class, 'product']);
+    Route::resource('products', ProductController::class);
     route::get('/dashboard', [DashboardController::class, 'index']);
     route::post('/product', [ProductController::class, 'create']);
 });

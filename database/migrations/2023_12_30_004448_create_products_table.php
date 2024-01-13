@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('id_user');
             $table->string('title');
-            $table->string('SKU');
-            $table->integer('price');
+            $table->string('code_barang')->unique();
+            $table->string('price');
             $table->text('desc');
             $table->string('image_uri');
             $table->timestamps();

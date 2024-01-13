@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($data)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard')->with('berhasil', 'Login Telah Berhasil');
+            return redirect()->intended('/products')->with('berhasil', 'Login Telah Berhasil');
         }
 
         return back()->with('loginError', 'login failed');

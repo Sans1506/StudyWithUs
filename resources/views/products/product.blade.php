@@ -12,7 +12,7 @@
                 <h4>Create Your Product</h4>
             </div>
             <div class="card-body">
-                <form action="/products" method="POST">
+                <form action="/products" method="POST" enctype="multipart/form-data">
                     @csrf           
                     <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="title">Title</label>
@@ -26,10 +26,10 @@
                     </div>
                     </div>
                     <div class="form-group row mb-4">
-                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="sku">SKU</label>
+                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="code_barang">Code_Barang</label>
                     <div class="col-sm-12 col-md-7">
-                        <input type="text" class="form-control @error('sku') is-invalid @enderror" name="sku" id="sku" required value="{{ old('sku') }}">
-                        @error('sku')
+                        <input type="text" class="form-control @error('code_barang') is-invalid @enderror" name="code_barang" id="code_barang" required value="{{ old('code_barang') }}">
+                        @error('code_barang')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
@@ -65,7 +65,7 @@
                     <div class="form-group row mb-4">
                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                     <div class="col-sm-12 col-md-7">
-                        <button class="btn btn-primary">Create Product</button>
+                        <button type="submit" class="btn btn-primary">Create Product</button>
                     </div>
                     </div>
                 </form>

@@ -2535,6 +2535,12 @@ a.bb {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* img */
+img {
+  max-width: 150px;
+  height: auto;
+}
+
 .img-shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
 }
